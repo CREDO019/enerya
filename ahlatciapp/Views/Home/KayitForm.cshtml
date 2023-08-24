@@ -1,0 +1,271 @@
+﻿
+@model ahlatciapp.Models.MainModel
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Abone  Kayıt </title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--===============================================================================================-->
+    <link rel="icon" type="image/png" href="images/icons/favicon.ico" />
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="~/css/bootstrap.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="~/css/font-awesome.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="~/css/animate.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="~/css/hambugers.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="~/css/select2.min.css">
+    <!--===============================================================================================-->
+                    <!--===============================================================================================-->
+    <!--===============================================================================================-->
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="~/lib/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="~/lib/bootstrap/dist/css/bootstrap-grid.css">
+    <link rel="stylesheet" type="text/css" href="~/lib/bootstrap/dist/css/bootstrap-reboot.css">
+    <link rel="stylesheet" type="text/css" href="~/lib/bootstrap/dist/css/bootstrap-utilities.css">
+    <link rel="stylesheet" type="text/css" href="~/lib/bootstrap/dist/css">
+
+
+
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="~/css/util.css">
+    <link rel="stylesheet" type="text/css" href="~/css/main.css">
+
+    <!--===============================================================================================-->
+    
+</head>
+<body>
+    <form asp-action="Kayit"  enctype="multipart/form-data"     >
+
+        <div class="limiter">
+
+            <div class="container-login100" date-tilt>
+                <div class="wrap-login100">
+                    <div class="login100-pic js-tilt" data-tilt>
+                        <img src="img/enerya_logo-ahlatci-012.jpg" alt="IMG">
+                        <img src="~/img/Ahlatci Gaz.png" alt="IMG">
+                    </div>
+
+
+                    <form class="login100-form validate-form" asp-action="Kayit"  >
+
+                        <span class="login100-form-title">
+                            <h3>Abone Kayıt Sayfası</h3>
+                        </span>
+
+                        
+                        <div class="wrap-input100 validate-input">
+                            <input asp-for="Abone.Ad" class="input100" placeholder="Lütfen  Ad Giriniz" oninput="this.value = this.value.toUpperCase()" />
+                            <span asp-validation-for="Abone.Ad" class="symbol-input100"></span>
+                            <span class="focus-input100"></span>
+                            <span class="symbol-input100">
+                            </span>
+                        </div>
+                        <div class="wrap-input100 validate-input">
+                            <input asp-for="Abone.SoyAd" class="input100" placeholder="Lütfen  Soy Ad Giriniz" oninput="this.value = this.value.toUpperCase()" />
+                            <span asp-validation-for="Abone.SoyAd" class="symbol-input100"></span>
+                        </div>
+                        <div class="wrap-input100 validate-input">
+                            <input asp-for="Abone.TcNo" class="input100" placeholder="Lütfen Tc Kimlik No giriniz" maxlength="11" oninput="this.value = this.value.replace(/[^0-9]/g, '')" />
+                            <span asp-validation-for="Abone.TcNo" class="symbol-input100"></span>
+                        </div>
+                        <div class="wrap-input100 validate-input">
+                            <input asp-for="Abone.Tel" class="input100" placeholder="Lütfen Telefon Giriniz" maxlength="11" oninput="this.value = this.value.replace(/[^0-9]/g, '')" />
+                            <span asp-validation-for="Abone.Tel" class="symbol-input100"></span>
+                        </div>
+                        <div class="wrap-input100 validate-input">
+                            <input asp-for="Abone.AnneKizlik" class="input100" placeholder="Lütfen Anne Kızlık Soy İsmini Giriniz" oninput="this.value = this.value.toUpperCase()" />
+                            <span asp-validation-for="Abone.AnneKizlik" class="symbol-input100"></span>
+                        </div>
+                        <div class="wrap-input100 validate-input">
+                            <input asp-for="Abone.Meslek" class="input100" placeholder="Lütfen Meslek Giriniz" oninput="this.value = this.value.toUpperCase()" />
+                            <span asp-validation-for="Abone.Meslek" class="symbol-input100"></span>
+                        </div>
+
+                        <div class="form-group" style="width:100%;margin-top:20px;margin-bottom:20px ">
+                            <label for="dogumyeri" style="input100"> Doğum Yeri </label>
+                            <select asp-for="Abone.Sehir" class="input100" id="dogumyeri">
+                                <option value="empty">Doğum yeri </option>
+                                @foreach (var city in Model.cities)
+                                {
+                                    <option value="@city.name">@city.name</option>
+                                }
+                            </select>
+
+                        </div>
+
+
+                        <div class="wrap-input100 validate-input">
+                            <lable>Doğum Tarihi</lable>
+                            <p></p>
+                            <input asp-for="Abone.DoyTarihi" type="date"  class="input100" placeholder="00/00/0000" />
+                            <span asp-validation-for="Abone.DoyTarihi" class="symbol-input100"></span>
+                        </div>
+
+                        <div class="form-group" style="width:100%" >
+                            <label for="cinsiyet" style="margin-bottom:10px"  >Cinsiyet</label>
+                            <select asp-for="Abone.Cinsiyet" class="input100" id="cinsiyet">
+                                <option value="Erkek">ERKEK</option>
+                                <option value="Kadın">KADIN</option>
+                            </select>
+                            <span asp-validation-for="Abone.Cinsiyet" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group" style="width:100%;margin-top:20px">
+                            <label for="saglikdurumu" style="margin-bottom:10px">Sağlık Durumu</label>
+                            <select asp-for="Abone.SağlıkDurum" class="input100" id="saglikdurum">
+                                <option value="Normal">Normal</option>
+                                <option value="Engelli">Engelli</option>
+                            </select>
+                            <span asp-validation-for="Abone.SağlıkDurum" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group" style="width:100%;margin-top:20px">
+                            <label for="uyruk" style="margin-bottom:10px"> Uyruk  </label>
+                            <select asp-for="Abone.Uyruk" class="input100" id="uyruk">
+                                <option value="empty" >Uyruk Seçiniz</option>
+                                @foreach (var ulke in Model.Ulkeler)
+                                {
+                                    <option value="@ulke" >@ulke</option>
+                                }
+                            </select>
+                            <span asp-validation-for="Abone.Uyruk" class="text-danger"></span>
+                        </div>
+
+                       
+                        <div class="mb-3" style="display:block;width:100%;margin-top:20px" >
+                            <label for="formFile" class="form-label">Kimlik Fotoğrafı</label>
+                            <input asp-for="Abone.KmlFoto" class="input100" type="file" id="formFile">
+                        </div>
+
+                        <span class="login100-form-title">
+                            <h3>Abone Adres Bilgis</h3>
+                        </span>
+
+                        <div class="form-group" style="width:100%;margin-top:20px">
+                            <select asp-for="Adres.İl" class="input100" id="il">
+                                <option value="empty">İl seçiniz </option>
+                                @foreach (var city in Model.cities)
+                                {
+                                    <option value="@city.name">@city.name</option>
+                                }
+                            </select>
+                           
+                        </div>
+
+
+                        <div class="form-group" style="width:100%;margin-top:20px">
+                            <select asp-for="Adres.İlce" class="input100" id="ilce">
+                                <option value="empty">İlçe seçiniz </option>
+                           
+                            </select>
+
+                        </div>
+
+                        <p> &nbsp;&nbsp;&nbsp;</p>
+                        <div class="wrap-input100 validate-input">
+                            <input asp-for="Adres.Mahalle" placeholder="MAHALE" class="input100" oninput="this.value = this.value.toUpperCase()" />
+                            <span asp-validation-for="Adres.Mahalle" class="symbol-input100"></span>
+                        </div>
+
+                        <div class="wrap-input100 validate-input">
+                            <input asp-for="Adres.CaddeSok" placeholder="CADDE / SOKAK" class="input100" oninput="this.value = this.value.toUpperCase()" />
+                            <span asp-validation-for="Adres.CaddeSok" class="symbol-input100"></span>
+                        </div>
+
+                        <div class="wrap-input100 validate-input" >
+                            <input id="binaInput" asp-for="Adres.Bina" placeholder="BİNA" class="input100" type="number" oninput="this.value = this.value.replace(/[^0-9]/g, '')" />
+                            <span asp-validation-for="Adres.Bina" class="symbol-input100"></span>
+                        </div>
+
+                        <div class="wrap-input100 validate-input" >
+                            <input id="daireInput" asp-for="Adres.Daire" placeholder="DAİRE" class="input100" type="number" oninput="this.value = this.value.replace(/[^0-9]/g, '')" />
+                            <span asp-validation-for="Adres.Daire" class="symbol-input100"></span>
+                        </div>
+
+
+                        <div class="container-login100-form-btn">
+                            <button id="Button1" class="login100-form-btn" type="submit">
+                                Kayıt
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+        <!--===============================================================================================-->
+
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="~/js/wow.min.js"></script>
+        <script src="~/js/easing.min.js"></script>
+        <script src="~/js/waypoints.min.js"></script>
+        <script src="~/js/counterup.min.js"></script>
+        <script src="~/js/owl.carousel.min.js"></script>
+
+   
+
+        <script >
+
+            document.getElementById("daireInput").addEventListener("input", function () {
+                let input = this.value;
+                if (input.length > 3) {
+                    input = input.slice(0, 3);
+                }
+                this.value = input;
+            });
+            document.getElementById("binaInput").addEventListener("input", function () {
+                let input = this.value;
+                if (input.length > 3) {
+                    input = input.slice(0, 3);
+                }
+                this.value = input;
+            });
+
+
+
+
+
+
+
+
+
+
+          
+            $("#il").on("change", function () {
+
+                var selectedCityName = $(this).val();
+                var districtDropdown = $("#ilce");
+                var modelData = @Html.Raw(Json.Serialize(Model)  );
+                districtDropdown.empty()
+                var defaultCity = modelData.cities.find(item => item.name === selectedCityName)
+
+                console.log("defaultClity",defaultCity)
+
+                for (var item of defaultCity.counties) {
+                    var newOption = $('<option>', {
+                        value: item, // Seçeneğin değeri
+                        text: item // Seçeneğin görünen metni
+                    });
+
+                    districtDropdown.append(newOption)
+
+                }
+                
+
+                
+            });
+        </script>
+
+       
+    </form>
+</body>
+</html>

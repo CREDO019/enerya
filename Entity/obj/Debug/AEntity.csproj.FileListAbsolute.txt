@@ -1,0 +1,10 @@
+C:\Users\emirh\OneDrive\Masaüstü\asd\ahlatciwebapp-main\Entity\bin\Debug\Entity.dll
+C:\Users\emirh\OneDrive\Masaüstü\asd\ahlatciwebapp-main\Entity\bin\Debug\Entity.pdb
+C:\Users\emirh\OneDrive\Masaüstü\asd\ahlatciwebapp-main\Entity\bin\Debug\Microsoft.Analytics.Interfaces.dll
+C:\Users\emirh\OneDrive\Masaüstü\asd\ahlatciwebapp-main\Entity\bin\Debug\Microsoft.Analytics.Interfaces.Streaming.dll
+C:\Users\emirh\OneDrive\Masaüstü\asd\ahlatciwebapp-main\Entity\bin\Debug\Microsoft.Analytics.Types.dll
+C:\Users\emirh\OneDrive\Masaüstü\asd\ahlatciwebapp-main\Entity\obj\Debug\AEntity.csproj.AssemblyReference.cache
+C:\Users\emirh\OneDrive\Masaüstü\asd\ahlatciwebapp-main\Entity\obj\Debug\AEntity.csproj.CoreCompileInputs.cache
+C:\Users\emirh\OneDrive\Masaüstü\asd\ahlatciwebapp-main\Entity\obj\Debug\AEntity.csproj.CopyComplete
+C:\Users\emirh\OneDrive\Masaüstü\asd\ahlatciwebapp-main\Entity\obj\Debug\Entity.dll
+C:\Users\emirh\OneDrive\Masaüstü\asd\ahlatciwebapp-main\Entity\obj\Debug\Entity.pdb
